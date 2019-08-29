@@ -13,9 +13,9 @@ import com.demo.webflux.handlers.UserHandler;
 
 @Configuration
 public class UserRouterConfig {
-	@Bean
+	/*@Bean
 	public HandlerFunction<ServerResponse> userHandlerFunction(UserHandler userHandler){
 		RouterFunctions.route(GET("/api/individual/user")
 				.and(accept(APPLICATION_JSON)), handlerFunction)
-	}
+	}*/
 }

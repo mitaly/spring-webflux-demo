@@ -2,10 +2,7 @@ package com.demo.webflux.model;
 
 import java.util.Date;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.springframework.data.annotation.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,12 +15,9 @@ import lombok.Setter;
 @Setter
 public class Fine {
 	@Id
-	@GeneratedValue
 	private int fineId;
 	private int amount;
 	private boolean payed;
-	@ManyToOne
-	@JoinColumn(name="fineId")
 	private Vehicle vehicle;
 	private Date violationDate;
 }

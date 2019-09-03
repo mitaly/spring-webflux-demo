@@ -1,16 +1,11 @@
 package com.demo.webflux.model;
 
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.demo.webflux.util.UserType;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,17 +15,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Document
 public class User {
 	@Id
-	@GeneratedValue
 	private int userId;
 	private int addressId;
 	private int age;
 	private String firstName;
 	private String lastName;
 	private UserType userType;
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="user")
-	private List<Vehicle> vehicles;
-	@OneToOne
+	private List<Vehicle> vehicles;	
 	private Address address;
 }

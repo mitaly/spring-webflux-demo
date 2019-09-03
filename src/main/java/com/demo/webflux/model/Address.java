@@ -1,7 +1,7 @@
 package com.demo.webflux.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import org.springframework.data.annotation.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,6 @@ import lombok.Setter;
 @Setter
 public class Address {
 	@Id
-	@GeneratedValue
 	private int addressId;
 	private String buildingName;
 	private String city;

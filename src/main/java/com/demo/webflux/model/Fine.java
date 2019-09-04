@@ -3,6 +3,7 @@ package com.demo.webflux.model;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,11 +14,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Document
 public class Fine {
 	@Id
 	private int fineId;
 	private int amount;
 	private boolean payed;
-	private Vehicle vehicle;
 	private Date violationDate;
 }

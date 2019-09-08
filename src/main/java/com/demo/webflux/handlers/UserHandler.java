@@ -11,6 +11,7 @@ import com.demo.webflux.model.User;
 import com.demo.webflux.services.UserService;
 import com.demo.webflux.util.CustomResponse;
 import com.demo.webflux.util.UserType;
+import static com.demo.webflux.util.CommonUtil.*;
 
 import reactor.core.publisher.Mono;
 
@@ -21,16 +22,6 @@ public class UserHandler {
 	public UserHandler(UserService service) {
 		this.service = service;
 	}
-
-	private static boolean isInteger(String str) {
-		try {
-			Integer.parseInt(str);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
-	}
-
 	// /[individual][organisation]/user
 	public Mono<ServerResponse> getUserByIdAndType(ServerRequest serverRequest) {
 		String path = serverRequest.uri().getPath();
@@ -56,4 +47,12 @@ public class UserHandler {
 		return ServerResponse.badRequest().body(Mono.just(new CustomResponse(HttpStatus.BAD_REQUEST.value(),
 				HttpStatus.BAD_REQUEST.toString(), "Invalid user id")), CustomResponse.class);
 	}
+	
+/*	public Mono<ServerResponse> getAddressByAddressId(ServerRequest serverRequest){
+		Optional<String> addressIdStr = serverRequest.queryParam("addressId");
+		
+		if(addressIdStr.isPresent() && isInteger(addressIdStr.get())) {
+			
+		}
+	}*/
 }

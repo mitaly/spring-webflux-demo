@@ -17,8 +17,8 @@ import lombok.Setter;
 @Document
 public class Fine {
 	@Id
-	private int fineId;
-	private int amount;
-	private boolean payed;
+	private Integer fineId;
+	private Integer amount;
+	private Boolean payed;
 	private Date violationDate;
 }

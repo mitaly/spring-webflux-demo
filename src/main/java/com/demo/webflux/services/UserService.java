@@ -34,4 +34,8 @@ public class UserService {
 	public Flux<User> getAllUsers(){
 		return repository.findAll();
 	}
+	
+	public Mono<User> saveUser(User user){
+		return repository.save(user);
+	}
 }

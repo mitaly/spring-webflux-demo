@@ -24,4 +24,8 @@ public class VehicleService {
 	public Flux<Fine> getFinesByVehicleId(int vehicleId){
 		return vehicleRepository.getFinesByVehicleId(vehicleId);
 	}
+	
+	public Mono<Vehicle> saveVehicle(Vehicle vehicle){
+		return vehicleRepository.save(vehicle);
+	}
 }

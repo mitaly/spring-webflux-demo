@@ -20,7 +20,7 @@ import lombok.Setter;
 @Document
 public class Vehicle{
 	@Id
-	private int vehicleId;
+	private Integer vehicleId;
 	private String model;
 	private Date registrationDate;
 	@DBRef

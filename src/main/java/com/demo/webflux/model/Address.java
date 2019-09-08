@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
@@ -14,7 +15,7 @@ import lombok.Setter;
 @Setter
 public class Address {
 	@Id
-	private int addressId;
+	private Integer addressId;
 	private String buildingName;
 	private String city;
 	private String country;
